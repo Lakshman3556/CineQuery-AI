@@ -1,0 +1,25 @@
+# Drug Pharmacology Database
+
+## Drug: Ibuprofen
+- **Category**: Nonsteroidal Anti-inflammatory Drug (NSAID)
+- **Mechanism of Action**: Reversible inhibition of cyclooxygenase enzymes COX-1 and COX-2. This blocks the synthesis of prostaglandins from arachidonic acid, reducing inflammation, pain, and fever.
+- **Indications**: Mild-to-moderate pain, primary dysmenorrhea, rheumatoid arthritis, osteoarthritis, and fever reduction.
+- **Dosage**: Adults: 200-400 mg orally every 4-6 hours as needed. Maximum daily dose is 3200 mg.
+- **Adverse Effects**: Dyspepsia, gastric ulceration, gastrointestinal bleeding, renal impairment, fluid retention, and increased risk of cardiovascular events.
+- **Contraindications**: Active peptic ulcer disease, severe renal impairment, severe heart failure, and coronary artery bypass graft (CABG) surgery perioperative period.
+
+## Drug: Metformin
+- **Category**: Biguanide (Oral Antidiabetic)
+- **Mechanism of Action**: Activates AMP-activated protein kinase (AMPK). It decreases hepatic gluconeogenesis (glucose production), decreases intestinal absorption of glucose, and improves insulin sensitivity by increasing peripheral glucose uptake.
+- **Indications**: First-line therapy for Type 2 Diabetes Mellitus.
+- **Dosage**: Starting: 500 mg orally once or twice daily with meals. Max dose: 2550 mg/day.
+- **Adverse Effects**: Gastrointestinal upset (diarrhea, nausea, abdominal pain), metallic taste, and lactic acidosis (rare but severe). Does not cause hypoglycemia.
+- **Contraindications**: Renal dysfunction (eFRG < 30 mL/min/1.73m²), acute or chronic metabolic acidosis (including diabetic ketoacidosis), and conditions predisposing to hypoxia.
+
+## Drug: Warfarin
+- **Category**: Anticoagulant (Vitamin K Antagonist)
+- **Mechanism of Action**: Inhibits the vitamin K epoxide reductase complex 1 (VKORC1) enzyme. This depletes active vitamin K, inhibiting the synthesis of coagulation factors II, VII, IX, and X, as well as proteins C and S.
+- **Indications**: Prophylaxis and treatment of venous thromboembolism, pulmonary embolism, and thromboembolic complications associated with atrial fibrillation or cardiac valve replacement.
+- **Dosage**: Highly individualized. Adjusted based on International Normalized Ratio (INR), targeting 2.0-3.0 for most indications.
+- **Adverse Effects**: Bleeding, skin necrosis, purple toe syndrome, and embryopathy (highly teratogenic).
+- **Contraindications**: Pregnancy, active bleeding/hemorrhagic tendencies, recent/planned neurosurgery, and severe uncontrolled hypertension.

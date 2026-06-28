@@ -1,0 +1,23 @@
+# Clinical Treatment Guidelines
+
+## Guideline: Hypertension Management (ACC/AHA)
+- **Initial Therapy**: For stage 1 hypertension (BP 130-139 / 80-89 mmHg) with high ASCVD risk (≥10%), or stage 2 hypertension (BP ≥ 140/90 mmHg), initiate pharmacotherapy with a thiazide diuretic, calcium channel blocker (CCB), ACE inhibitor, or ARB.
+- **Combination Therapy**: Start with two first-line agents of different classes for stage 2 hypertension if BP is > 20/10 mmHg above goal.
+- **Special Populations**: 
+  - Patients with Chronic Kidney Disease (CKD): ACE inhibitors or ARBs are first-line.
+  - Black patients: Thiazides or CCBs are preferred initial monotherapy over ACE inhibitors.
+  - Pregnant patients: Methyldopa, Nifedipine, or Labetalol are preferred. ACE inhibitors and ARBs are strictly contraindicated due to fetal toxicity.
+
+## Guideline: Asthma Management (GINA)
+- **Stepwise Approach**:
+  - **Step 1-2**: Preferred reliever is low-dose inhaled corticosteroid (ICS) combined with Formoterol (a fast-onset long-acting beta agonist) taken as needed. Alternatively, low-dose ICS taken whenever SABA (Albuterol) is used.
+  - **Step 3**: Low-dose ICS-Formoterol as daily maintenance and reliever therapy, or daily low-dose ICS + SABA as needed.
+  - **Step 4**: Medium-dose ICS-Formoterol as maintenance and reliever.
+  - **Step 5**: High-dose ICS-Formoterol, refer for phenotypic evaluation and add-on biologic therapy (e.g., Omalizumab).
+
+## Guideline: Type 2 Diabetes Management (ADA)
+- **First-line Therapy**: Metformin combined with lifestyle intervention (diet and exercise) is the preferred initial choice.
+- **Cardiovascular/Renal Complications**: If patient has established Atherosclerotic Cardiovascular Disease (ASCVD), Heart Failure (HF), or CKD, add:
+  - GLP-1 receptor agonists (e.g., Semaglutide) for ASCVD benefits.
+  - SGLT2 inhibitors (e.g., Empagliflozin) for HF or CKD progression benefits.
+- **Target HbA1c**: Target HbA1c of < 7.0% for most non-pregnant adults.

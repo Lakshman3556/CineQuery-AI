@@ -1,0 +1,20 @@
+# Python virtual environment
+.venv/
+venv/
+ENV/
+
+# Python cache
+**/__pycache__/
+*.py[cod]
+*$py.class
+
+# Local environment variables (Contains API keys - DO NOT UPLOAD!)
+.env
+
+# Local ChromaDB Vector store data (Large local binary files)
+backend/chroma_store/
+
+# IDE settings files
+.vscode/
+.idea/
+ 

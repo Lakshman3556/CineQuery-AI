@@ -1,0 +1,19 @@
+# Clinical Diseases Database - Medical Conditions
+
+## Condition: Hypertension
+- **Description**: Hypertension (high blood pressure) is a chronic medical condition where the blood pressure in the systemic arteries is persistently elevated. It is classified as primary (essential) hypertension, representing 90-95% of cases with no identifiable medical cause, and secondary hypertension, caused by underlying conditions like renal artery stenosis, chronic kidney disease, pheochromocytoma, or primary aldosteronism.
+- **Pathogenesis**: Essential hypertension results from a complex interaction of genetic factors, sympathetic nervous system overactivity, rennin-angiotensin-aldosterone system (RAAS) activation, endothelial dysfunction, and renal sodium retention.
+- **Clinical Presentation**: Asymptomatic ("silent killer") until organ damage occurs. Symptoms of severe hypertension include morning occipital headaches, dizziness, epistaxis (nosebleeds), visual changes, chest pain, and dyspnea.
+- **Diagnostic Criteria**: Clinic systolic blood pressure persistently ≥ 140 mmHg or diastolic ≥ 90 mmHg based on multiple readings on separate occasions.
+
+## Condition: Asthma
+- **Description**: Asthma is a chronic inflammatory disease of the airways characterized by variable/recurring symptoms, reversible airflow obstruction, and bronchospasms.
+- **Pathogenesis**: Airway inflammation involves mast cells, eosinophils, and T-helper type 2 (Th2) lymphocytes. This leads to airway hyper-responsiveness to triggers like cold air, allergens, exercise, or infections. Over time, it causes airway remodeling.
+- **Clinical Presentation**: Wheezing (usually expiratory), cough (worse at night/morning), dyspnea, and chest tightness. Symptoms are characteristically variable and reversible.
+- **Diagnostic Criteria**: Spirometry showing FEV1/FVC ratio obstruction, with bronchodilator reversibility test showing FEV1 increase of >12% and >200 mL after inhaling Albuterol.
+
+## Condition: Diabetes Mellitus (Type 2)
+- **Description**: Type 2 Diabetes (T2DM) is a progressive metabolic disorder characterized by hyperglycemia, insulin resistance, and pancreatic beta-cell secretory defect.
+- **Pathogenesis**: Driven by a combination of insulin resistance (decreased tissue response in liver, muscle, and adipose tissue) and progressive beta-cell dysfunction. Visceral obesity is a primary driver.
+- **Clinical Presentation**: Polyuria (urination), polydipsia (thirst), polyphagia (hunger), fatigue, weight loss, blurred vision, and recurrent infections.
+- **Diagnostic Criteria**: HbA1c ≥ 6.5%, Fasting Plasma Glucose ≥ 126 mg/dL, or OGTT 2-hour glucose ≥ 200 mg/dL.
