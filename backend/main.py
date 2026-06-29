@@ -62,16 +62,27 @@ def download_and_extract_db():
 
         # Handle Google Drive large file virus warning page
         # Large files on Google Drive return a confirmation warning page that needs a confirmation token
-        if b"confirm=" in file_data and b"drive.google.com" in direct_url.encode():
+        if b"Google Drive - Virus scan warning" in file_data or b"confirm=" in file_data:
             html_content = file_data.decode("utf-8", errors="ignore")
-            confirm_match = re.search(r"confirm=([a-zA-Z0-9_-]+)", html_content)
-            if confirm_match:
-                confirm_token = confirm_match.group(1)
-                print(f"[STARTUP] Large file warning detected. Retrying with Google Drive confirmation token: {confirm_token}", flush=True)
-                confirm_url = direct_url + f"&confirm={confirm_token}"
+            # Parse all hidden input tags from the warning page form
+            inputs = re.findall(r'<input type="hidden" name="([^"]+)" value="([^"]+)">', html_content)
+            if inputs:
+                query_params = "&".join(f"{name}={val}" for name, val in inputs)
+                confirm_url = f"https://drive.usercontent.google.com/download?{query_params}"
+                print(f"[STARTUP] Large file warning detected. Retrying with Google Drive confirmation URL: {confirm_url}", flush=True)
                 req = urllib.request.Request(confirm_url, headers=headers)
                 with urllib.request.urlopen(req) as response:
                     file_data = response.read()
+            else:
+                # Fallback: Parse confirm token from HTML
+                confirm_match = re.search(r"confirm=([a-zA-Z0-9_-]+)", html_content)
+                if confirm_match:
+                    confirm_token = confirm_match.group(1)
+                    print(f"[STARTUP] Large file warning detected. Retrying with Google Drive confirmation token: {confirm_token}", flush=True)
+                    confirm_url = direct_url + f"&confirm={confirm_token}"
+                    req = urllib.request.Request(confirm_url, headers=headers)
+                    with urllib.request.urlopen(req) as response:
+                        file_data = response.read()
 
         # If the file data starts with '<!DOCTYPE' or '<html', it's an HTML page (like a login or error page), not a ZIP/database
         if file_data.strip().startswith(b"<") or b"html" in file_data[:50].lower():
