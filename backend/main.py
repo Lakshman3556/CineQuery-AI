@@ -31,11 +31,24 @@ def download_and_extract_db():
         print("[STARTUP] No CHROMA_DB_URL environment variable found. Skipping auto-download.")
         return
 
-    # Check if chroma.sqlite3 already exists in CHROMA_STORE_DIR
+    # Check if chroma.sqlite3 already exists in CHROMA_STORE_DIR and is a valid SQLite file
     sqlite_path = os.path.join(config.CHROMA_STORE_DIR, "chroma.sqlite3")
     if os.path.exists(sqlite_path):
-        print(f"[STARTUP] Database already exists at '{sqlite_path}'. Skipping download.")
-        return
+        try:
+            with open(sqlite_path, "rb") as f:
+                header = f.read(15)
+            if header == b"SQLite format 3":
+                print(f"[STARTUP] Database already exists and is valid at '{sqlite_path}'. Skipping download.")
+                return
+            else:
+                print(f"[STARTUP] Corrupted database file found (invalid SQLite header). Deleting and re-downloading.")
+                os.remove(sqlite_path)
+        except Exception as e:
+            print(f"[STARTUP] Error verifying database file: {e}. Deleting and re-downloading.")
+            try:
+                os.remove(sqlite_path)
+            except Exception:
+                pass
 
     direct_url = get_direct_download_url(db_url)
     print(f"[STARTUP] Pre-built database not found. Downloading from URL: {direct_url}...")
@@ -46,6 +59,19 @@ def download_and_extract_db():
         req = urllib.request.Request(direct_url, headers=headers)
         with urllib.request.urlopen(req) as response:
             file_data = response.read()
+
+        # Handle Google Drive large file virus warning page
+        # Large files on Google Drive return a confirmation warning page that needs a confirmation token
+        if b"confirm=" in file_data and b"drive.google.com" in direct_url.encode():
+            html_content = file_data.decode("utf-8", errors="ignore")
+            confirm_match = re.search(r"confirm=([a-zA-Z0-9_-]+)", html_content)
+            if confirm_match:
+                confirm_token = confirm_match.group(1)
+                print(f"[STARTUP] Large file warning detected. Retrying with Google Drive confirmation token: {confirm_token}")
+                confirm_url = direct_url + f"&confirm={confirm_token}"
+                req = urllib.request.Request(confirm_url, headers=headers)
+                with urllib.request.urlopen(req) as response:
+                    file_data = response.read()
 
         # Check if the downloaded file is a ZIP archive (starts with 'PK\x03\x04')
         if file_data.startswith(b"PK\x03\x04"):
