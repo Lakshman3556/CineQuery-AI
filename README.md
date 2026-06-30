@@ -1,14 +1,8 @@
 ---
-title: CineQuery AI Backend
-emoji: 🍿
-colorFrom: blue
-colorTo: red
-sdk: docker
-app_port: 7860
-pinned: false
+
 ---
 
-# 🍿 CineQuery AI (सिनिma AI)
+# 🍿 CineQuery AI
 
 CineQuery AI is an immersive, conversational **Retrieval-Augmented Generation (RAG) assistant** designed specifically for cinema. It allows users to search, explore, and ask complex natural language questions about a dataset of **40,000+ movies, plots, directors, cast members, and trivia**. 
 
@@ -22,17 +16,6 @@ The app features a **Vite + React frontend** with a beautiful, responsive, and i
 
 CineQuery AI employs a modular and resource-efficient architecture combining local machine learning models for vector database search with high-performance cloud LLMs for natural language generation.
 
-```mermaid
-graph TD
-    A[Vite React Frontend on Netlify] <-->|Server-Sent Events / JSON| B[FastAPI Backend on Hugging Face]
-    B <-->|Deduplicated CSVs| C[Local Data Ingest / Loader]
-    B <-->|Cosine Similarity Search| D[Persistent ChromaDB Store]
-    B <-->|Embed Query: all-MiniLM-L6-v2| E[Local SentenceTransformer]
-    B <-->|Score Candidates: MiniLM-L-6-v2| F[Local Cross-Encoder Re-ranker]
-    B <-->|System Prompt + Chat History| G[LLM Generation Engine]
-    G <-->|API Request| H[Groq Llama-3.3-70b]
-    G <-->|API Request| I[Google Gemini-1.5-flash]
-```
 
 ### ⚡ The RAG Pipeline Workflow
 1. **Query Input**: The user sends a natural language question (e.g. *"Find me suspenseful space thrillers with a lonely astronaut"*).
